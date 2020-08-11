@@ -1,0 +1,158 @@
+.modal-window.open {
+    z-index: 3;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, .8);
+    transition: all .2s ease-in-out;
+}
+
+.modal-window {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 2% 0;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: -1;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+}
+
+.modal-window .modal-body {
+    box-sizing: border-box;
+    position: relative;
+    top: 0%;
+    width: 40%;
+    margin: 0 auto 4% auto;
+    background-color: #2b2b2b;
+    border-radius: 5px;
+    overflow: hidden;
+    transform: translateY(-110%);
+    transition: transform .2s ease-in-out;
+}
+
+.modal-window.open .modal-body {
+    transform: translateY(5%);
+}
+
+.modal-window .modal-body section.modal-head {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2%;
+    text-align: center;
+    color: #d8d8d8;
+    position: relative;
+}
+
+.modal-window .modal-body section.modal-head span {
+    position: absolute;
+    top: 4px;
+    right: 2%;
+    cursor: pointer;
+    color: #d8d8d8;
+    transition: transform .25s, color .25s;
+}
+
+.modal-window .modal-body section.modal-head span:hover {
+    color: white;
+    transform: rotate(90deg);
+}
+
+.modal-window hr {
+    border-color: #d8d8d8;
+}
+
+.modal-window .modal-body section.modal-content {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2%;
+}
+
+section.modal-content .info-row {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 3%;
+    display: flex;
+}
+
+section.modal-content .info-row img {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 2.5%;
+}
+
+.info-row#setting-output-image,
+.info-row#add-output-image,
+.info-row#edit-output-image {
+    margin-bottom: 0;
+}
+
+section.modal-content .info-row .info-label {
+    box-sizing: border-box;
+    width: 30%;
+    padding: 5px;
+    display: inline-block;
+    text-align: right;
+    color: #d8d8d8;
+}
+
+section.modal-content .info-row .info-label.file {
+    box-sizing: border-box;
+    width: 70%;
+    display: inline-block;
+    text-align: left;
+    color: #2b2b2b;
+    background-color: #d8d8d8;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+section.modal-content .info-row .info-label label {
+    vertical-align: middle;
+}
+
+section.modal-content .info-row input[type="text"],
+section.modal-content .info-row input[type="date"],
+section.modal-content .info-row select {
+    box-sizing: border-box;
+    width: 70%;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #d8d8d8;
+    vertical-align: middle;
+}
+
+section.modal-content .info-row input[type="file"] {
+    display: none;
+}
+
+section.modal-content .error-image {
+    width: 100%;
+    padding: .5%;
+    margin-bottom: 2.5%;
+    background-color: #9e1d1d;
+    color: #2f0000;
+    border-radius: 3px;
+    font-size: 0.65em;
+    white-space: nowrap;
+    text-overflow: clip;
+}
+
+section.modal-content .button-block {
+    box-sizing: border-box;
+    width: 100%;
+    text-align: right;
+}
+
+section.modal-content .button-block button {
+    outline: none;
+    padding: 1%;
+    border: none;
+    border-radius: 5px;
+    background-color: #464646;
+    color: white;
+    cursor: pointer;
+}

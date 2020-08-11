@@ -1,0 +1,871 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+header {
+    box-sizing: border-box;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    background-color: #2b2b2b;
+    border-bottom: 2px solid #191919;
+}
+
+header nav {
+    box-sizing: border-box;
+    width: 49%;
+    display: contents;
+    vertical-align: middle;
+    line-height: 52px;
+}
+
+main {
+    padding-top: 50px;
+    padding-bottom: 1%;
+    background-color: #191919;
+    display: flex;
+}
+
+.main-block {
+    box-sizing: border-box;
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.main-block li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 2%;
+}
+
+.main-block li a {
+    text-decoration: none;
+    color: #9e9e9e;
+}
+
+.main-block li a:hover {
+    color: white;
+}
+
+section.user-block {
+    box-sizing: border-box;
+    width: 50%;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.user {
+    width: 40%;
+    height: 52px;
+    display: inline-table;
+    line-height: 52px;
+}
+
+.user span.user-name {
+    margin-right: 5%;
+    vertical-align: middle;
+    color: white;
+}
+
+.user img {
+    width: 18%;
+    vertical-align: middle;
+}
+
+section.lite-column {
+    box-sizing: border-box;
+    width: 30%;
+    display: inline-block;
+    position: relative;
+    float: left;
+    padding: 5%;
+    background-color: #2b2b2b;
+}
+
+section.lite-column .student-photo {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 5%;
+    border: 4px solid #2b2b2b;
+    border-radius: 5px;
+    display: flex;
+}
+
+section.lite-column .student-photo img {
+    width: 100%;
+}
+
+section.lite-column button {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 4% 0 4% 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #444444;
+    color: white;
+    outline: none;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+section.info-column {
+    box-sizing: border-box;
+    width: 68.5%;
+    float: right;
+}
+
+section.info-column .student-info,
+section.info-column .student-achievements {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2%;
+    margin-bottom: 2%;
+    border-radius: 5px;
+    background-color: #2b2b2b;
+    float: right;
+}
+
+section.info-column .student-info .info-row {
+    display: block;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+section.info-column .student-info .info-row .label {
+    box-sizing: border-box;
+    width: 39%;
+    display: inline-block;
+    color: #9e9e9e;
+    text-align: right;
+}
+
+section.info-column .student-info .labeled {
+    box-sizing: border-box;
+    padding-left: 1%;
+    width: 60%;
+    display: inline-block;
+    color: white;
+}
+
+section.info-column h2 {
+    text-align: center;
+    color: white;
+    font-size: 1.3em;
+    margin-bottom: 2%;
+}
+
+section.info-column .student-achievements .docs-block {
+    box-sizing: border-box;
+    width: 100%
+}
+
+section.info-column .student-achievements .docs-block .doc {
+    box-sizing: border-box;
+    width: 24%;
+    margin: 0 auto;
+    display: inline-flex;
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+}
+
+section.info-column .student-achievements .docs-block .doc img {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+section.info-column .student-achievements .docs-block .doc .annotation {
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 20% 0 4% 3%;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 50%,rgba(0,0,0,1) 100%);;
+    color: white;
+    font-size: 0.8em;
+    display: none;
+    border: none;
+}
+
+.annotation-btn {
+    border: none;
+    font-size: 0;
+}
+
+section.info-column .student-achievements .button-block {
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 1%;
+    text-align: right;
+}
+
+section.info-column .student-achievements .button-block button {
+    box-sizing: border-box;
+    width: 20%;
+    padding: 1%;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background-color: #464646;
+}
+
+.modal-window {
+    position: absolute;
+    width: 100%;
+    padding: 2% 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    height: 110%;
+    display: none;
+}
+
+.modal-window .modal-body {
+    box-sizing: border-box;
+    position: fixed;
+    top: 35%;
+    left: 40%;
+    width: 30%;
+    background-color: #2b2b2b;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.modal-window .modal-body section.modal-head {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2%;
+    text-align: center;
+    color: #d8d8d8;
+    position: relative;
+}
+
+.modal-window .modal-body section.modal-head span {
+    position: absolute;
+    top: 4px;
+    right: 2%;
+    cursor: pointer;
+}
+
+.modal-window hr {
+    border-color: #d8d8d8;
+}
+
+.modal-window .modal-body section.modal-content {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2%;
+}
+
+section.modal-content .info-row {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 3%;
+    display: flex;
+}
+
+section.modal-content .info-row .info-label {
+    box-sizing: border-box;
+    width: 30%;
+    padding-right: 2%;
+    display: inline-block;
+    text-align: right;
+    color: #d8d8d8;
+}
+
+section.modal-content .info-row .info-label label {
+    vertical-align: middle;
+}
+
+section.modal-content .info-row input[type="text"] {
+    box-sizing: border-box;
+    width: 70%;
+    padding: 1%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #d8d8d8;
+    vertical-align: middle;
+}
+
+section.modal-content .button-block {
+    box-sizing: border-box;
+    width: 100%;
+    text-align: right;
+}
+
+section.modal-content .button-block button {
+    outline: none;
+    padding: 1%;
+    border: none;
+    border-radius: 5px;
+    background-color: #d8d8d8;
+    color: black;
+    cursor: pointer;
+}
+
+section.cards-column input[type="search"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1.5%;
+    margin-bottom: 2%;
+    border: none;
+    background-color: #2b2b2b;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+}
+
+section.cards-column {
+    box-sizing: border-box;
+    width: 65%;
+    float: left;
+}
+
+section.cards-column .item-card {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #2b2b2b;
+    border-radius: 5px;
+}
+
+section.cards-column .item-card hr {
+    border-color: #d8d8d8;
+}
+
+section.cards-column .item-card .item-head,
+section.cards-column .item-card .item-annotation,
+section.cards-column .item-card .item-additional-info,
+section.cards-column .item-card .item-footer {
+    padding: 2%;
+}
+
+section.cards-column .item-card .item-head .item-name {
+    display: inline-block;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+section.cards-column .item-card .item-head .item-wage {
+    display: inline-block;
+    text-align: right;
+    color: white;
+    font-size: 1.1em;
+}
+
+section.cards-column .item-card .item-annotation p {
+    padding: 0;
+    color: white;
+}
+
+section.cards-column .item-card .item-additional-info p {
+    padding: 1% 0;
+    color: #9e9e9e;
+    font-size: 0.75em;
+}
+
+section.cards-column .item-card .item-footer .button-block {
+    text-align: right;
+}
+
+section.cards-column .item-card .item-footer .button-block button {
+    padding: 1%;
+    background-color: #464646;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+section.filters {
+    box-sizing: border-box;
+    width: 33%;
+    padding: 1%;
+    float: right;
+    background-color: #2b2b2b;
+    border-radius: 5px;
+}
+
+.half-width {
+    box-sizing: border-box;
+    width: 49%;
+}
+
+section.filters .filter_row input[type="text"],
+section.filters .filter_row input[type="range"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2%;
+    margin-bottom: 2.5%;
+    margin-top: 2.5%;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+section.filters .filter_row #wage-range_row {
+    display: flex;
+}
+
+section.filters .filter_row .block-row .min-wg-r {
+    box-sizing: border-box;
+    width: 45%;
+    margin-bottom: 3%;
+}
+
+section.filters .filter_row .block-row .max-wg-r {
+    box-sizing: border-box;
+    width: 60%;
+    text-align: right;
+    margin-bottom: 3%;
+}
+
+section.filters .filter_row .block-row,
+section.student-filter .filter_row .block-row {
+    box-sizing: border-box;
+    width: 100%;
+    color: white;
+}
+
+section.filters .filter_row input[type="checkbox"],
+section.filters .filter_row input[type="radio"] {
+    display: none;
+}
+
+section.filters .filter_row label.choice,
+section.filters .filter_row label.choice_2 {
+    position: relative;
+    padding-left: 8%;
+    vertical-align: middle;
+}
+
+section.filters .filter_row label.choice::after {
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 14px;
+    height: 14px;
+    border: 2px solid #2b2b2b;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #9e9e9e;
+    vertical-align: middle;
+}
+
+section.filters .filter_row label.choice_2::after {
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 14px;
+    height: 14px;
+    border: 2px solid #2b2b2b;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #9e9e9e;
+    vertical-align: middle;
+}
+
+section.filters .filter_row input[type="checkbox"]:checked + label.choice::after,
+section.filters .filter_row input[type="radio"]:checked + label.choice_2::after {
+    background-color: #9e9e9e;
+}
+
+section.filters .filter_row p {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    color: #9e9e9e;
+}
+
+section.filters .button-block {
+    text-align: right;
+}
+
+section.filters .button-block button {
+    padding: 2%;
+    background-color: #464646;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+section.contact-left {
+    box-sizing: border-box;
+    width: 65%;
+    float: left;
+}
+
+section.contact-left .contact-map {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2%;
+    background-color: #2b2b2b;
+    border-radius: 5px;
+    margin-bottom: 2.5%;
+}
+
+section.contact-left h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 2%;
+    font-size: 1.3em;
+}
+
+section.contact-left .contact-map iframe {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    height: 30em;
+    border: none;
+    border-radius: 5px;
+}
+
+section.contact-left .contact-row button {
+    box-sizing: border-box;
+    width: 32%;
+    padding: 2%;
+    margin: 1% 0.4% 0 0.4%;
+    display: inline-block;
+    background-color: #464646;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    color: white;
+}
+
+section.contact-left .contact-row button img {
+    display: block;
+    box-sizing: border-box;
+    width: 45%;
+    margin: 0 auto 4% auto;
+}
+
+section.contact-right {
+    box-sizing: border-box;
+    width: 33%;
+    float: right;
+}
+
+section.contact-right .contact-row,
+section.contact-left .contact-row {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2%;
+    background-color: #2b2b2b;
+    border-radius: 5px;
+    margin-bottom: 4%;
+}
+
+section.contact-right .contact-row img {
+    box-sizing: border-box;
+    width: 10%;
+    vertical-align: middle;
+}
+
+section.contact-right .contact-row a {
+    color: #9e9e9e;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+section.table {
+    box-sizing: border-box;
+    width: 65%;
+    float: left;
+}
+
+section.table table {
+    box-sizing: border-box;
+    width: 100%;
+    color: white;
+    text-align: center;
+    border-spacing: 3px;
+    margin-bottom: 1.5%;
+}
+
+section.table table tr {
+    border-collapse: separate;
+}
+
+section.table table th,
+section.table table td {
+    padding: 8px;
+    background-color: #2b2b2b;
+    font-size: 0.9em;
+}
+
+section.table table th:first-child {
+    border-top-left-radius: 5px;
+}
+
+section.table table th:last-child {
+    border-top-right-radius: 5px;
+}
+
+section.table table tr:last-child td:first-child {
+    border-bottom-left-radius: 5px;
+}
+
+section.table table tr:last-child td:last-child {
+    border-bottom-right-radius: 5px;
+}
+
+section.table table td button {
+    padding: 1%;
+    cursor: pointer;
+}
+
+.del-btn {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+}
+
+section.table .pages {
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+}
+
+section.table .pages a {
+    padding: 1%;
+    border: none;
+    background-color: #2b2b2b;
+    color: white;
+    font-size: 0.9em;
+    border-radius: 5px;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.active-page {
+    text-decoration: underline;
+}
+
+section.student-filter {
+    box-sizing: border-box;
+    width: 33%;
+    padding: 1%;
+    float: right;
+    background-color: #2b2b2b;
+    border-radius: 5px;
+}
+
+section.student-filter .filter_row input[type="text"],
+section.student-filter .filter_row select {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2%;
+    margin: 4% auto;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+section.student-filter .filter_row input#min-age,
+section.student-filter .filter_row input#max-age {
+    box-sizing: border-box;
+    width: 49%;
+    display: inline-flex;
+}
+
+section.student-filter .button-block {
+    box-sizing: border-box;
+    width: 100%;
+    text-align: right;
+}
+
+section.student-filter .button-block button {
+    width: 25%;
+    padding: 3%;
+    border: none;
+    background-color: #464646;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+section.add-student {
+    box-sizing: border-box;
+    width: 65%;
+    float: left;
+}
+
+section.add-student .add-student-block {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2%;
+    margin-bottom: 3%;
+    background-color: #2b2b2b;
+    border-radius: 5px;
+}
+
+section.add-student .add-student-block:last-child {
+    margin-bottom: 0;
+}
+
+section.add-student .add-student-block h2,
+section.student-other h2 {
+    color: white;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+section.add-student .add-student-block .add-student-row {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 2% 0;
+    display: flex;
+}
+
+section.add-student .add-student-block .add-student-row:first-child {
+    margin-top: 0;
+}
+
+section.add-student .add-student-block .add-student-row:last-child {
+    margin-bottom: 0;
+}
+
+section.add-student .add-student-block .add-student-row label {
+    box-sizing: border-box;
+    width: 75%;
+    display: inline-block;
+    color: white;
+    vertical-align: middle;
+    line-height: 26px;
+}
+
+section.add-student .add-student-block .add-student-row input[type="text"],
+section.add-student .add-student-block .add-student-row input[type="number"],
+section.add-student .add-student-block .add-student-row input[type="date"],
+section.add-student .add-student-block .add-student-row input[type="password"],
+section.add-student .add-student-block .add-student-row select {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1%;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    vertical-align: middle;
+    display: flex;
+}
+
+section.add-student .add-student-block h3,
+section.student-other h3 {
+    text-align: center;
+    font-size: 1.05em;
+    font-weight: normal;
+    color: white;
+    margin: 1% 0;
+}
+
+section.add-student .add-student-block label#download-file-label {
+    box-sizing: border-box;
+    width: 28%;
+    padding: 2%;
+    display: block;
+    margin: 0 auto 2% auto;
+    background-color: #464646;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-image: url("images/icons/upload-icon.png");
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-position: 94% 50%;
+}
+
+section.add-student .add-student-block input[type="file"] {
+    display: none;
+}
+
+section.add-student .add-student-block img#download-student-photo {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+}
+
+section.add-student .add-student-block img#result-download {
+    box-sizing: border-box;
+    width: 50%;
+    display: flex;
+}
+
+section.add-student .button-block {
+    box-sizing: border-box;
+    width: 100%;
+    text-align: right;
+}
+
+section.add-student .button-block button {
+    width: 20%;
+    padding: 1.5%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #464646;
+    color: white;
+    cursor: pointer;
+}
+
+section.student-other {
+    box-sizing: border-box;
+    width: 33%;
+    padding: 1%;
+    float: right;
+    background-color: #2b2b2b;
+    border-radius: 5px;
+}
+
+section.student-other input[type="text"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2%;
+    margin: 2% auto;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+section.student-other .button-block {
+    box-sizing: border-box;
+    width: 100%;
+    text-align: right;
+    margin-top: 2%;
+}
+
+section.student-other .button-block button {
+    border: none;
+    padding: 2%;
+    background-color: #464646;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+footer {
+    box-sizing: border-box;
+    position: relative;
+    padding: 1.5%;
+    text-align: center;
+    background-color: #2b2b2b;
+    color: white;
+    z-index: 2;
+    border-top: 2px solid #191919;
+}
